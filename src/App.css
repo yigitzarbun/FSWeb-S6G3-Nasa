@@ -1,33 +1,75 @@
 .App {
   text-align: center;
+  padding-bottom: 15vh;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 15vh;
   pointer-events: none;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 50s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 25vh;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.APODImg {
+  width: 50%;
+}
+
+.NASA-section {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  column-gap: 5rem;
+}
+
+.NASA-texts {
+  display: flex;
+  flex-direction: column;
+  border: 0.3rem solid black;
+}
+
+.tarihSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tarihSection input {
+  width: 20%;
+}
+
+.tarihSection input:hover {
+  border: 0.3rem solid blue;
+}
+.currentDate {
+  display: flex;
+  margin: 1rem 0;
+  column-gap: 2rem;
+}
+
+.currentDate button:hover {
+  border: 0.3rem solid blue;
+  box-sizing: border-box;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
