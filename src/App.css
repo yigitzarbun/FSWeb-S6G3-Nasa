@@ -1,75 +1,140 @@
+/* Reset CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 .App {
   text-align: center;
   padding-bottom: 15vh;
 }
 
-.App-logo {
-  height: 15vh;
-  pointer-events: none;
-  max-width: 100%;
-}
-
+/* Logo animation */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 50s linear;
   }
 }
 
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  min-height: 25vh;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.APODImg {
-  width: 50%;
-}
-
-.NASA-section {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  column-gap: 5rem;
-}
-
-.NASA-texts {
-  display: flex;
-  flex-direction: column;
-  border: 0.3rem solid black;
-}
-
-.tarihSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tarihSection input {
-  width: 20%;
-}
-
-.tarihSection input:hover {
-  border: 0.3rem solid blue;
-}
-.currentDate {
-  display: flex;
-  margin: 1rem 0;
-  column-gap: 2rem;
-}
-
-.currentDate button:hover {
-  border: 0.3rem solid blue;
-  box-sizing: border-box;
-}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

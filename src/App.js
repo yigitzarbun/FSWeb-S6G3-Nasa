@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Header";
-import Baslik from "./Baslik";
 import Tarih from "./Tarih";
+import Main from "./Main";
 import axios from "axios";
+import styled from "styled-components";
 
 function App() {
+  //State hooks
   const [APOD, setAPOD] = useState("");
-  const [date, setDate] = useState("");
-
+  const [date, setDate] = useState(dateFormatter(new Date()));
+  //Get Data
   useEffect(() => {
     axios
       .get(
@@ -23,31 +25,40 @@ function App() {
       });
   }, [date]);
 
+  //Select Date
   function dateChanger(tarih) {
+    setDate(dateFormatter(tarih));
+  }
+
+  //Date Format
+  function dateFormatter(tarih) {
     let gun = new Date(tarih);
-    let gercekTarih = `${gun.getFullYear()}-${gun.getMonth() +
-      1}-${gun.getDate()}`;
-    setDate(gercekTarih);
+    let gercekTarih = `${gun.getFullYear()}-${digitFormatter(
+      gun.getMonth() + 1
+    )}-${digitFormatter(gun.getDate())}`;
+    return gercekTarih;
   }
 
+  function digitFormatter(sayi) {
+    let format = sayi < 10 ? `0${sayi}` : sayi;
+    return format;
+  }
+  //Reset Date
   function dateReset() {
-    setDate("");
+    setDate(dateFormatter(new Date()));
   }
 
+  //JSX
   return (
     <div className="App">
       <Header src="./images/nasa.png" />
-      <Tarih className="Tarih" selectDate={dateChanger} resetDate={dateReset} />
-      <Baslik baslik="NASA Astronomy Picture of the Day (APOD)" />
-      <div className="NASA-section">
-        {APOD !== null ? <img className="APODImg" src={APOD.url}></img> : null}
-        <div className="NASA-texts">
-          <h2>{APOD.title}</h2>
-          <p>{APOD.copyright}</p>
-          <p>{APOD.date}</p>
-          <p>{APOD.explanation}</p>
-        </div>
-      </div>
+      <Tarih
+        selectDate={dateChanger}
+        resetDate={dateReset}
+        date={date}
+        dateFormatter={dateFormatter}
+      />
+      <Main data={APOD} />
     </div>
   );
 }
